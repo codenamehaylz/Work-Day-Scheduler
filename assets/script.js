@@ -20,14 +20,14 @@ $('.time-block').each(function(){
 
 //function for saving text to local storage
 
-function saveText(){
-
+function saveEvent(event){
+    var targetRow = $(event.target).parent().parent();
+    var newText = targetRow.children('.description').children('textarea').val();
+    console.log(newText);
 }
 
 //on click event for save button, calls save function
-saveBtn.on("click", function(){
-    console.log("You clicked the save button");
-})
+saveBtn.on("click", saveEvent);
 
 
 
